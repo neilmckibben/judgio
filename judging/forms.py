@@ -46,3 +46,11 @@ class JudgeForm(forms.ModelForm):
             judge.save()
 
         return judge
+
+# new form for teams so we can auto-generate users on save
+class TeamForm(forms.ModelForm):
+
+    class Meta:
+        model = Team
+        fields = ('team_name', 'member_names', 'member_emails', 'new_hackers',
+                    'project_name', 'project_description')
