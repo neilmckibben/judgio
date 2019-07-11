@@ -22,6 +22,17 @@ class Judge(models.Model):
     def __str__(self):
         return self.name()
 
+
+#Add teams and team attributes to users who are a teams
+class Team(models.Model):
+    #idk how long to make the max length
+    team_name = models.CharField(max_length=100)
+    member_names = models.CharField(max_length=100)
+    member_emails = models.EmailField()
+    new_hackers = models.CharField(max_length=100)
+    project_name = models.CharField(max_length=50)
+    project_description = models.TextField(blank=True)
+
 # make migration commands
 # python manage.py makemigrations judging
 # python manage.py sqlmigrate judging 0001
