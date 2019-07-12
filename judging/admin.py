@@ -7,6 +7,8 @@ import json
 
 from .models import Judge
 from .forms import JudgeForm
+from .models import Team
+from .forms import TeamForm
 
 # Filter for active status
 class ActiveFilter(admin.SimpleListFilter):
@@ -65,5 +67,6 @@ def judge_upload_view(request):
 
 # register new view on admin site
 admin.site.register(User)
+admin.site.register(Team)
 admin.site.register(Judge, JudgeAdmin)
 admin.site.register_view('judges/judge-upload/', view=judge_upload_view)
