@@ -53,7 +53,8 @@ class TeamForm(forms.ModelForm):
 
     class Meta:
         model = Team
-        fields = ('team_name', 'member_one_name', 'member_one_email',
+        fields = ('team_name', 'project_name', 'number_of_members',
+                'member_one_name', 'member_one_email',
                 'member_two_name','member_two_email', 'member_three_name',
                 'member_three_email', 'member_four_name', 'member_four_email',
                 'new_hackers', 'project_description')

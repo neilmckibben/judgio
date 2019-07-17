@@ -35,6 +35,7 @@ class Team(models.Model):
         )
     team_name = models.CharField(max_length=100, unique=True)
     project_name = models.CharField(max_length=50, )
+    number_of_members = models.CharField(choices=TEAM_SIZE, max_length=1)
     member_one_name = models.CharField(max_length=50, default='invalid')
     member_one_email = models.EmailField(default='invalid')
     member_two_name = models.CharField(max_length=50, default='invalid')
