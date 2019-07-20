@@ -5,6 +5,7 @@ from .forms import JudgeForm
 from .models import Team
 from .forms import TeamForm
 from .models import Judge
+from .views import judge_upload_view
 
 # Filter for active status
 class ActiveFilter(admin.SimpleListFilter):
