@@ -1,10 +1,13 @@
-<<<<<<< HEAD
 from django.views.generic import CreateView
 from .models import Team
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.template import Context, loader
+import json
 from django.views.generic import CreateView
 from .forms import TeamForm
+from .forms import JudgeForm
+from .models import Judge
 
 def register(request):
 
@@ -14,14 +17,7 @@ def register(request):
     if form.is_valid():
         form.save()
     return render(request, 'form.html', {'form' : form})
-=======
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
-from django.template import Context, loader
-import json
 
-from .forms import JudgeForm
-from .models import Judge
 
 def home(request):
     # check if user is checked in judge
@@ -55,4 +51,3 @@ def judge_upload_view(request):
     else:
         template = loader.get_template("admin/judge_upload.html")
         return HttpResponse(template.render())
->>>>>>> 4931462f491fcff27b00099c66413d2154266d25
